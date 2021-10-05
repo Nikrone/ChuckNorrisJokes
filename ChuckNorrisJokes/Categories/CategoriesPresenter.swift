@@ -13,11 +13,16 @@ import Foundation
 protocol CategoriesPresenterProtocol {
 	var view: CategoriesViewProtocol? { get set }
     func viewDidLoad()
+    
+    func category(for indexPath: IndexPath) -> String
+    func numberOfCategories() -> Int
 }
 
 class CategoriesPresenter: CategoriesPresenterProtocol {
 
     weak var view: CategoriesViewProtocol?
+    
+    private var categories: [String] = []
 
     func viewDidLoad() {
         guard let url = URL(string: "https://api.chucknorris.io/jokes/categories") else {
@@ -29,8 +34,19 @@ class CategoriesPresenter: CategoriesPresenterProtocol {
         ) { data, response, error in
             guard let data = data else { return }
             let decoder = JSONDecoder()
-            let categories = try? decoder.decode([String].self, from: data)
-            print(categories)
+            let categories = try?
+            decoder.decode([String].self, from: data)
+            self.categories = categories ?? []
+            DispatchQueue.main.async {
+                self.view?.reloadData()
+            }
         }.resume()
+    }
+    
+    func category(for indexPath: IndexPath) -> String {
+        return categories[indexPath.row]
+    }
+    func numberOfCategories() -> Int {
+        return categories.count
     }
 }
