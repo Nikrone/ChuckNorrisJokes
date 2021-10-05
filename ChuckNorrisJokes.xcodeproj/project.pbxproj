@@ -16,6 +16,7 @@
 		7145CC70270C6491007A7754 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7145CC6D270C6491007A7754 /* Categories.storyboard */; };
 		7145CC71270C6491007A7754 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145CC6E270C6491007A7754 /* CategoriesPresenter.swift */; };
 		7145CC72270C6491007A7754 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145CC6F270C6491007A7754 /* CategoriesViewController.swift */; };
+		7145CC75270C6CA8007A7754 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145CC74270C6CA8007A7754 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7145CC6D270C6491007A7754 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		7145CC6E270C6491007A7754 /* CategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPresenter.swift; sourceTree = "<group>"; };
 		7145CC6F270C6491007A7754 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		7145CC74270C6CA8007A7754 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7145CC59270C6451007A7754 /* AppDelegate.swift */,
 				7145CC5B270C6451007A7754 /* SceneDelegate.swift */,
 				7145CC5D270C6451007A7754 /* ViewController.swift */,
+				7145CC74270C6CA8007A7754 /* Category.swift */,
 				7145CC73270C649A007A7754 /* Categories */,
 				7145CC5F270C6451007A7754 /* Main.storyboard */,
 				7145CC62270C6452007A7754 /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				7145CC71270C6491007A7754 /* CategoriesPresenter.swift in Sources */,
 				7145CC5C270C6451007A7754 /* SceneDelegate.swift in Sources */,
 				7145CC72270C6491007A7754 /* CategoriesViewController.swift in Sources */,
+				7145CC75270C6CA8007A7754 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

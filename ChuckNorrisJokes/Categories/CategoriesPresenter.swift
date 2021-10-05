@@ -9,13 +9,8 @@
 
 import Foundation
 
-// MARK: View -
-protocol CategoriesViewProtocol: class {
-
-}
-
 // MARK: Presenter -
-protocol CategoriesPresenterProtocol: class {
+protocol CategoriesPresenterProtocol {
 	var view: CategoriesViewProtocol? { get set }
     func viewDidLoad()
 }
@@ -25,6 +20,17 @@ class CategoriesPresenter: CategoriesPresenterProtocol {
     weak var view: CategoriesViewProtocol?
 
     func viewDidLoad() {
-
+        guard let url = URL(string: "https://api.chucknorris.io/jokes/categories") else {
+            return
+        }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(
+            with: request
+        ) { data, response, error in
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            let categories = try? decoder.decode([String].self, from: data)
+            print(categories)
+        }.resume()
     }
 }
