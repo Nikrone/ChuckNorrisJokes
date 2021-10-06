@@ -11,12 +11,16 @@ import UIKit
 
 // MARK: View -
 protocol JokeViewProtocol: AnyObject {
-
+    func updateImageView(with data: Data)
+    func updateJokeLabel(with joke: String)
 }
 
 class JokeViewController: UIViewController {
 
-	var presenter: JokePresenterProtocol = JokePresenter()
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var textLabel: UILabel!
+    
+	var presenter: JokePresenterProtocol!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,4 +29,19 @@ class JokeViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
+}
+
+extension JokeViewController: JokeViewProtocol {
+    func updateImageView(with data: Data) {
+        imageView.image = UIImage(data: data)
+        imageView.isHidden = false
+    }
+    
+    func updateJokeLabel(with joke: String) {
+        textLabel.text = joke
+        textLabel.isHidden = false
+
+    }
+    
+    
 }

@@ -15,13 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1R6-3m-eiw">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1R6-3m-eiw">
                                 <rect key="frame" x="87" y="181" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NVD-Gc-SxQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="ewH-Ly-En3"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r29-y2-3x2">
-                                <rect key="frame" x="186" y="352" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r29-y2-3x2">
+                                <rect key="frame" x="0.0" y="349" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +31,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lO1-Lq-3c2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r29-y2-3x2" firstAttribute="centerX" secondItem="dHv-Ld-GZd" secondAttribute="centerX" id="1hH-4t-XFN"/>
+                            <constraint firstItem="1R6-3m-eiw" firstAttribute="top" secondItem="lO1-Lq-3c2" secondAttribute="top" constant="137" id="B7n-Ju-auP"/>
+                            <constraint firstItem="r29-y2-3x2" firstAttribute="leading" secondItem="lO1-Lq-3c2" secondAttribute="leading" id="Se9-uv-eQg"/>
+                            <constraint firstItem="1R6-3m-eiw" firstAttribute="centerX" secondItem="dHv-Ld-GZd" secondAttribute="centerX" id="UkT-LZ-iGz"/>
+                            <constraint firstItem="r29-y2-3x2" firstAttribute="top" secondItem="1R6-3m-eiw" secondAttribute="bottom" constant="40" id="adE-r5-ahd"/>
+                            <constraint firstItem="lO1-Lq-3c2" firstAttribute="trailing" secondItem="r29-y2-3x2" secondAttribute="trailing" id="pWC-te-li2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="1R6-3m-eiw" id="wD7-HW-oRR"/>
+                        <outlet property="textLabel" destination="r29-y2-3x2" id="0zp-jz-iOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7B-uH-bVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
